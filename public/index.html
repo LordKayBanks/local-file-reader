@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>File Browser</title>
+   <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+   <nav>
+      <div id="breadcrumb"></div>
+      <div id="form-group">
+         <form id="newFolderForm" action="/create-folder" method="POST">
+            <input type="text" name="newFolderName" placeholder="New folder name" required>
+            <input type="hidden" id="currentPath-folderForm" name="currentPath" value="">
+            <button type="submit">Create Folder</button>
+         </form>
+         <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <input type="hidden" id="currentPath-uploadForm" name="currentPath" value="">
+            <button type="submit">Upload File</button>
+         </form>
+      </div>
+   </nav>
+   <ul id="directory-list"></ul>
+   <div id="file-content"></div>
+
+   <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>
